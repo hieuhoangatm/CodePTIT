@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+    int a,b=0,sole=0,sochan=0;
+    scanf("%d", &a);
+    while(a>0){
+        b=a%10;
+        if(b%2==0)
+        	sochan++;
+        else
+        	sole++;
+        	a=a/10;
+    }
+    printf("%d %d", sole, sochan);
+    return 0;
+}
+//Hoàng Đình HiếuHiếu
