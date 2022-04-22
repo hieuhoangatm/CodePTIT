@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+	int a;
+	scanf("%d", &a);
+	int b,s=0;
+	int i=1;
+	int c=a;
+	for(a;a>0;a/10){
+		int n=1;
+		b=0;
+		b+=a%10;
+		a=a/10;
+		for(int i=1;i<=b;i++){
+			n=i*n;
+		}
+		s+=n;
+	}
+	if(s==c){
+		printf("1");
+	}else{
+		printf("0");
+	}
+}
+// Hoàng Đình Hiếu
