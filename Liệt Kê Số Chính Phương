@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int m,n;
+    scanf("%d %d", &m,&n);
+    int dem=0;
+    if(m>=0 && m<n){
+        int start=sqrt(m);
+        int end=sqrt(n);
+        start=(start*start==m)? start: start+1;
+        int i;
+        printf("%d\n", end-start+1);
+        for(int i=start;i<=end;i++){
+            printf("%d\n", i*i );
+        }
+    }
+}
+// Hoàng Đình Hiếu
