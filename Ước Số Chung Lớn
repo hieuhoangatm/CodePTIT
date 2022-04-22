@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int a,b, UCLN,x;
+	scanf("%d", &x);
+	while(x>0){
+	    scanf("%d%d", &a, &b);
+	    x--;
+		while(a!=b){
+			if(a>b) a=a-b;
+			else b=b-a;
+		}
+		UCLN=a;
+		printf("%d\n", UCLN);
+	}
+}
+// Hoàng Đình Hiếu
