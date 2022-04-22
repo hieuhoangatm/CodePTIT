@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+	int n; 
+	int a,b=0;
+	scanf("%d\n", &n);
+	while(n>0){
+	    int  sole =0,sochan=0; 
+		scanf("%d\n", &a);
+		n--; 
+		while(a>0){
+			b=a%10;
+			if(b%2==0)
+				sochan++;
+			else 
+				sole++;
+			a=a/10;
+		}
+		printf("%d %d\n", sole, sochan);
+	}
+	return 0;
+}
+		
+	
