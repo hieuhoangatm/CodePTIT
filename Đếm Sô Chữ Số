@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int n,soluongChuso;
+	do{
+		scanf("%d", &n);
+	}while(n<=0);
+	soluongChuso=0;
+	while(n>0){
+		soluongChuso+=1;
+		n/=10;
+	}
+    printf("%d",soluongChuso);
+}
+// Hoàng Đình Hiếu
+	
