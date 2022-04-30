@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+long long ktraThuanNghich(long long n){
+    long long m=n, dao=0;
+	while(m>0){
+	    dao=dao*10 + m%10;
+		m/=10;
+	}
+	if(dao==n) return 1;
+	else return 0;
+}
+
+long long kraSoLe(long long n){
+    long long i,s=0; 
+	while(n>0){
+	    i=n%10;
+		if(i%2==0) return 0;
+	    else s+=i; 
+	    n/=10;
+	} 
+	if(s%2==0) return 0;
+	else return 1;
+}
+
+int main(){
+    long long k,n; 
+	scanf("%lld", &k);
+	while(k--){
+	    long long n;
+		scanf("%lld",&n);
+		if(ktraThuanNghich(n) && kraSoLe(n))
+		    printf("YES\n");
+		else printf("NO\n");
+	}
+	return 0;
+} 
