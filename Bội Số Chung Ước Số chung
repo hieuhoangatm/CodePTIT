@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+long long USCLN(long a,long b){
+	if(a%b!=0){
+		return USCLN(b,a%b);
+	}else
+	    return b;
+} 
+
+long long BSCNN(long long a,long long b){
+	return (a*b)/USCLN(a,b);
+}
+
+int main(){
+	long long a,b;
+	int n;
+	scanf("%d", &n);
+	while(n>0){
+		if(n>=1 && n<=100){
+			scanf("%lld%lld", &a,&b);
+			if(a> 0 && b>0)
+			printf("%lld %lld\n", BSCNN(a,b), USCLN(a,b));
+			n--;
+		}
+	}
+	return 0;
+}
