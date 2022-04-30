@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+long long USCLN(long long a, long long b){
+	if(a%b!=0){
+		return USCLN(b,a%b);
+	}else
+	    return b;
+} 
+
+long long USCLN2(long long c, long long d){
+	if(c%d!=0){
+		return USCLN(d,c%d);
+	}else
+	    return d;
+} 
+
+int main(){
+	long long a,b,c,d;
+	int n;
+	scanf("%d", &n);
+	while(n>0){
+		scanf("%lld%lld%lld%lld", &a, &b,&c,&d);
+		if(USCLN( a,  b)== USCLN2( c,  d)){
+			printf("YES\n");
+		}else printf("NO\n");
+		n--;
+	}
+}
