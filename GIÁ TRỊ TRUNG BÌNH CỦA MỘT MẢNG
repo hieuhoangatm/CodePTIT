@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+void nhap(int *arr, int *n){
+    while(*n<=0){
+    	scanf("%d", n);
+    	int i;
+    	for(i=0;i<*n;i++){
+    		scanf("%d", &arr[i]);
+    	}
+    }
+}
+
+void Trungbinhcong(int *arr, int n){
+	int tong=0,dem=0;
+	int i;
+	for(i=0;i<n;i++){
+			tong+=arr[i];
+            dem++;
+		
+	}
+	if(dem!=0)
+	    printf("%0.3f\n", (float)tong/dem);
+}
+
+
+
+int main(){
+	int n,arr[100];
+	nhap(arr,&n);
+	Trungbinhcong(arr,n);
+	return 0;
+}
+
