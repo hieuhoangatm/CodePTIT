@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+long Check(long n){
+	long tmp;
+	for(long i=2;i<=sqrt(n);i++){
+		while(n%i==0){
+			tmp=i;
+			n/=i;
+		}
+	}
+	if(n!=1) tmp=n;
+	return tmp;
+}
+
+int main(){
+	long t;
+	scanf("%ld",&t);
+	for(int i=1;i<=t;i++){
+		long n;
+		scanf("%ld",&n);
+		if(n>=2 && n<=pow(10,10));
+		printf("%ld\n",Check(n));
+	}
+}
