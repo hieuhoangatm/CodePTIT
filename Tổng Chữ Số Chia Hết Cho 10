@@ -1,0 +1,23 @@
+#include<stdio.h>
+int Kiemtra(int n){
+	int s=0;
+    while(n>0){
+           s=s+n%10;
+           n/=10;
+           }
+           if(s%10==0){
+               printf("YES\n");
+        	}else{ 
+        	    printf("NO\n");
+       }
+   }
+int main(){
+	int a;
+	scanf("%d", &a);
+	while(a--){
+		int n;
+		scanf("%d", &n);
+	    Kiemtra(n);
+	}
+}
+   
