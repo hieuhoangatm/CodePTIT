@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n;
+	int m;
+	long long k=0;
+	scanf("%d",&n);
+	while(n--){
+	scanf("%d",&m);
+	
+	while(m%2==0){
+		k=k+2;
+		m=m/2;
+	}
+	for(int i=3;i<=sqrt(m);i+=2){
+		while(m%i==0){
+		k=k+i;
+		m=m/i;
+			}
+		}
+	if(m>1)
+	k=k+m;
+	}	
+	printf("%lld",k);
+}
