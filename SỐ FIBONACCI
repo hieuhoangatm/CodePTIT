@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(){
+	int k;
+	scanf("%d", &k);
+	while(k--){
+		long long a[100];
+		long long n,i;
+		scanf("%lld",&n);
+		
+		for( i=0;i<n;i++){
+		    if( i==0 || i==1){
+		    	a[i]=1;
+		    }else{
+		    	 a[i]=a[i-2]+a[i-1];
+		    }
+		    
+		}
+		printf("%lld\n", a[n-1]);
+	}
+	return 0;	
+	
+}
