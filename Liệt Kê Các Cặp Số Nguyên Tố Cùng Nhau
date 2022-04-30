@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+  int a,b;
+  scanf("%d%d", &a,&b);
+  for(int i=a;i<=b;i++){
+      for(int j=a;j<=b;j++){
+	      int kq=0;
+		  if(i>=j){
+		       for(int k=2;k<=j;k++){
+			       if((i%k==0)&& j%k==0){
+			       	   kq=1;
+					   break;
+					}
+		       }
+			}else{
+			    for(int k=2;k<=i;k++){
+				    if(i%k==0 && j%k==0){
+					   kq=1;
+					   break;
+					}
+				}
+			}
+			if(kq==0 && i<j){
+			    printf("(%d,%d)\n", i,j);
+			}
+		}
+	}
+} 
