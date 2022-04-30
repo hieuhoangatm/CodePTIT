@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdbool.h>
+
+bool Kiemtratungso(long long n){
+    
+    while(n>0 ){
+    	
+    	int k=n%10;
+    	if(k%2==1){
+    		return false;
+    	}
+    	n/=10;
+    }
+    return true;
+}
+
+int main(){
+	long long a;
+	scanf("%lld", &a);
+	while(a>0){
+		long long n;
+		scanf("%lld", &n);
+		if( (n%2==0) && Kiemtratungso(n) ==true)
+		    printf("YES\n");
+		else
+		    printf("NO\n");
+	    a--;
+	}
+}
