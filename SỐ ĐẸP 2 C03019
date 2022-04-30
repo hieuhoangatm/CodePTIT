@@ -1,0 +1,72 @@
+#include<stdio.h>
+
+int thuannghich(int n){
+	int m=n,dao=0;
+	while(m>0){
+		dao=dao*10+m%10;
+		m/=10;
+	}
+	if(dao==n) return 1;
+	else return 0;
+}
+
+int kt(int n){
+	int s=0;
+	while(n>0){
+		int i=n%10;
+		s+=i;
+		n/=10;
+	}
+	if(s%10==0) return 1;
+	else return 0;
+}
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		int n,dem=0;
+		scanf("%d",&n);
+		if(n==2) printf("1\n");
+		else if(n==3){
+			for(int i=100;i<=999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==4){
+			for(int i=1000;i<=9999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==5){
+			for(int i=10000;i<=99999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==6){
+			for(int i=100000;i<=999999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==7){
+			for(int i=1000000;i<=9999999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==8){
+			for(int i=10000000;i<=99999999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}else if(n==9){
+			for(int i=100000000;i<=999999999;i++){
+				if(thuannghich(i) && kt(i)) dem++;
+			}
+			printf("%d\n",dem);
+		}
+	}
+	return 0;
+}
+		
+					
+		
