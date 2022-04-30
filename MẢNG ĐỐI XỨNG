@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+void Nhap(int arr[], int *n){
+	scanf("%d",n);
+	int i,j,k;
+	for(k=0;k<*n;k++){
+		scanf("%d", &arr[k]);
+	}
+}
+
+int KiemtraDao(int a[],int n){
+    int co=1;
+    for(int i=0;i<n/2;i++)
+        if(a[i]!=a[n-1-i]) co=0;
+    return co;
+}
+
+int main(){
+	int n=0, arr[100],k;
+	scanf("%d", &k);
+	while(k--){
+	    Nhap(arr, &n);
+	    if(KiemtraDao(arr,n)==0)
+	        printf("NO\n");
+	    else
+	        printf("YES\n");
+	}
+}
