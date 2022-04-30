@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+
+long long Check(long long n){
+	long long i,dem2=0,dem3=0,dem5=0,dem7=0;
+	while(n>0){
+		i=n%10;
+		n/=10;
+		if(i==2)
+		    dem2++;
+		if(i==3) dem3++;
+		if(i==5) dem5++;
+		if(i==7) dem7++;
+	}
+	if(dem2!=0) printf("2 %lld\n",dem2);
+	if(dem3!=0) printf("3 %lld\n",dem3);
+	if(dem5!=0) printf("5 %lld\n",dem5);
+	if(dem7!=0) printf("7 %lld\n",dem7);
+}
+
+int main(){
+	long long n;
+	scanf("%lld", &n);
+	Check(n);
+}
+	
+	
+		
