@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	for(int i=1;i<=t;i++){
+		int n,m;
+		scanf("%d%d",&n,&m);
+		int a[n][m];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				scanf("%d",&a[i][j]); 
+			} 
+		}
+		int max1=0,hang;
+		for(int i=0;i<n;i++){
+			int sum=0; 
+			for(int j=0;j<m;j++){
+				sum+=a[i][j]; 
+			}
+			if(sum>max1){
+				max1=sum; 
+			    hang=i;
+		    }
+		}
+		int max2=0,cot;
+		for(int i=0;i<m;i++){
+			int sum2=0; 
+			for(int j=0;j<n;j++){
+				if(j!=hang) 
+			     	sum2+=a[j][i]; 
+			} 
+			if(sum2>max2){
+				max2=sum2; 
+			    cot=i; 
+		    }
+		} 
+		printf("Test %d:\n",i);
+		for(int i=0;i<n;i++){
+			if(i!=hang){
+				for(int j=0;j<m;j++){
+					if(j!=cot){
+						printf("%d ",a[i][j]); 
+					} 
+				} 
+			}
+			printf("\n"); 
+		} 
+	} 
+} 
