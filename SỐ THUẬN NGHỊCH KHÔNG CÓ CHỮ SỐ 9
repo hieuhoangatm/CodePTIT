@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int kt(int n){
+	while(n){
+		int i=n%10;
+		if(i==9) return 0;
+		n/=10;
+	}
+	return 1;
+}
+
+int kt2(int n){
+	int m=n,dao=0;
+	while(m>0){
+		dao=dao*10+m%10;
+		m/=10;
+	}
+	if(dao==n) return 1;
+	else return 0;
+}
+
+int main(){
+	int n,dem=0;
+	scanf("%d",&n);
+	if(n<1000){
+	for(int i=2;i<n;i++){
+		if(kt(i) && kt2(i)){
+			printf("%d ",i);
+			dem++;
+		}
+	}
+	printf("\n");
+	printf("%d",dem);
+	}
+	return 0;
+}
