@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main(){
+	int a,b;
+	scanf("%d%d",&a,&b);
+	int A[101], B[101];
+	for(int i=0;i<a;i++){
+		scanf("%d",&A[i]); 
+	} 
+	for(int i=0;i<b;i++){
+		scanf("%d",&B[i]); 
+	} 
+	int p;
+	scanf("%d",&p);
+	for(int i=0;i<p;i++){
+		printf("%d ",A[i]); 
+	} 
+	for(int i=0;i<b;i++){
+		printf("%d ",B[i]); 
+	} 
+	for(int i=p;i<a;i++){
+		printf("%d ",A[i]); 
+	} 
+}
