@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+long long a[101];
+
+long long min(long long n){
+	int i=0;
+	while(n>0){
+		a[i]=n%10;
+		n/=10;
+		i++;
+	}
+	for(int j=0;j<i;j++){
+		if(a[j]==6) a[j]=5;
+	}
+	long long tong=0;
+	for(int j=i-1;j>=0;j--){
+		tong=tong*10+a[j];
+	}
+	return tong;
+}
+
+long long max(long long n){
+	int i=0;
+	while(n>0){
+		a[i]=n%10;
+		n/=10;
+		i++;
+	}
+	for(int j=0;j<i;j++){
+		if(a[j]==5) a[j]=6;
+	}
+	long long tong=0;
+	for(int j=i-1;j>=0;j--){
+		tong=tong*10+a[j];
+	}
+	return tong;
+}
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	   long long a,b;
+	   scanf("%lld%lld",&a,&b);
+	   printf("%lld ",min(a)+min(b));
+	   printf("%lld\n", max(a)+max(b));
+    }
+}
