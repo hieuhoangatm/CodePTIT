@@ -1,0 +1,54 @@
+#include<stdio.h>
+
+long long  kt1(long long n){
+	long long  a=n,dao=0;
+	while(a>0){
+		int i=a%10;
+		dao=dao*10+a%10;
+		a/=10;
+	}
+	if(dao==n) return 1;
+	else return 0; 
+}
+
+long long  kt2(long long  n){
+	int i,k; 
+	while(n>0){
+		i=n%10;
+	    k=i;
+	    break; 
+    }
+    int x; 
+	while(n>0){
+		x=n%10;
+		n/=10; 
+	}
+	if(2*k==x || k==2*x) return 1;
+	else return 0; 
+}
+
+long long  kt3(long long n){
+	int i;
+	long long  m=n/10,dao=0;
+	while(m>=10){
+		i=m%10;
+		dao=dao*10+m%10; 
+		m/=10; 
+	}
+    if(kt1(dao)) return 1;
+	else return 0; 
+     
+} 
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	
+	    long long  n;
+	    scanf("%lld",&n);
+	    if(kt2(n) && kt3(n) ) printf("YES\n");
+	    else printf("NO\n"); 
+	   
+    }
+} 
