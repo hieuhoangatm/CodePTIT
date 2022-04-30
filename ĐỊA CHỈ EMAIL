@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h> 
+void vietthuong(char c[]){
+	for(int i=0;i<strlen(c);i++){
+		c[i]=tolower(c[i]); 
+	} 
+} 
+
+int main(){
+	char c[1005],a[20][50];
+	gets(c);
+	int dem=0;
+	char *token=strtok(c, " ");
+	while(token!=NULL){
+		strcpy(a[dem],token);
+		vietthuong(a[dem]); 
+		token=strtok(NULL," ");
+		dem++; 
+	}
+	for(int i=0;i<dem-1;i++){
+	    printf("%c",a[i][0]); 
+    }
+	printf("%s@ptit.edu.vn",a[dem-1]);
+	
+} 
