@@ -1,0 +1,23 @@
+#include<stdio.h>
+ 
+int main(){
+    long long n;
+    scanf("%lld",&n); 
+	long long a[n];
+	long long  min; 
+	for(long long i=0;i<n;i++) scanf("%lld",&a[i]); 
+	for(long long i=0;i<n-1;i++){ 
+	    min=i; 
+	    for(long long j=i+1;j<n;j++){
+			if(a[j]<a[min])
+			    min=j;
+		}
+		long long tmp=a[min];
+		a[min]=a[i];
+		a[i]=tmp;
+		for(long long x=0;x<n;x++){ 
+		    printf("%d ",a[x]);
+		}
+		printf("\n");
+	}
+}
