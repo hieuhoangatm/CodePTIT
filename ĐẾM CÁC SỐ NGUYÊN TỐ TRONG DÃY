@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<math.h>
+		
+int cnt[1000001]={0};
+
+int KiemtraNgTo(int n){
+	if(n<2)  return 0;
+	for(int i=2;i<=sqrt(n);i++){
+		if(n%i==0) return 0;
+	}
+	return 1;
+}
+
+
+int main(){
+	int n,k;
+	scanf("%d", &k);
+    for(int j=1;j<=k;j++){
+	    scanf("%d", &n);
+	    int a[100];
+	    for(int i=0;i<n;i++){
+		    scanf("%d", &a[i]);
+	    }
+	    for(int i=0;i<n;i++){
+		    cnt[a[i]]++;
+	    }
+	    printf("Test %d:\n", j);
+	    
+	    for(int i=0;i<n;i++){
+		    if(cnt[a[i]]!=0 ){
+		    	int tg;
+                for(int x = 0; x < n - 1; x++){
+                    for(int y = x + 1; y < n; y++){
+                            if(a[x] > a[y]){
+                                tg = a[x];
+                                a[x] = a[y];
+                                a[y] = tg;        
+                            }
+                    }
+                }
+                if(KiemtraNgTo(a[i])){
+            
+		        printf("%d xuat hien %d lan\n", a[i], cnt[a[i]]);
+		        cnt[a[i]]=0;
+		        }
+	     	} 
+		} 
+	}
+}
+	
+
