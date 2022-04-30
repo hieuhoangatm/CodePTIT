@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdbool.h>
+int KiemtraNgto(int n){
+	if(n<2)
+	    return 0;
+	int i;
+	for(i=2;i<=sqrt(n);i++){
+		if(n%i==0)
+		    return 0;
+	}
+	return 1;
+}
+
+int TongchuSo(int n){
+	int sum=0;
+	int k;
+	while(n>0){
+	    k=n%10;
+	    sum+=k;
+	    n/=10;
+    }
+    return sum;
+}
+bool isPerfectSquare(int x) 
+{ 
+    int s = sqrt(x); 
+    return (s*s == x); 
+} 
+  
+bool fibonacci(int n) 
+{ 
+    return isPerfectSquare(5*n*n + 4) || 
+           isPerfectSquare(5*n*n - 4); 
+} 
+
+int main(){
+	int n;
+	int a,b,tmp;
+	scanf("%d%d", &a,&b);
+	if(a>b){
+		tmp=b;
+		b=a;
+		a=tmp;
+	    for(int i=a;i<=b;i++){
+		    if(KiemtraNgto(i)==1 && fibonacci(TongchuSo(i) ))
+		        printf("%d ", i);
+        }
+	}
+   
+    else if(a<b){
+       	tmp=b;
+		b=a;
+		a=tmp;
+	    for(int i=b;i<=a;i++){
+		    if(KiemtraNgto(i)==1  && fibonacci(TongchuSo(i)) )
+		        printf("%d ", i);
+        }
+    }else if (a==b){
+        return 0;
+    }
+    return 0;
+}
