@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(){
+	int a,b,Tong1=0,Tong2=0;
+	scanf("%d%d", &a, &b);
+	int A=a, B=b;
+	while(a>0){
+		Tong1=Tong1+a%10;
+		a/=10;
+	}
+	while(b>0){
+		Tong2=Tong2+b%10;
+		b/=10;
+	}
+	if(Tong1<Tong2)
+	    printf("%d %d", A,B);
+	else if(Tong2<Tong1)
+	    printf("%d %d", B,A);
+	else
+	    printf("%d %d", A,B);
+}
