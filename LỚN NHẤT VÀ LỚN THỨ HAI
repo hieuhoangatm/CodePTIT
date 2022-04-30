@@ -1,0 +1,34 @@
+#include "stdio.h"
+#include "limits.h"
+
+int timMaxThuHai(int x[], int n){
+	int max = INT_MIN;
+	int max_2 = INT_MIN;
+	
+	for(int i =0 ; i<n; i++){
+		if(x[i]>max)
+			max = x[i];
+	}
+	printf("%d ",max);
+	for(int i=0; i<n; i++){
+		if (x[i]==max){
+			continue;
+		}else{
+			if(x[i]>max_2){
+				max_2 = x[i];
+			}
+		}
+	}
+	printf("%d", max_2);
+} 
+
+int main(){
+	int n,x[100];
+	scanf("%d", &n);
+	int i;
+	for(i=0;i<n;i++){
+		scanf("%d", &x[i]);
+	}
+	timMaxThuHai(x,n);
+	
+}
