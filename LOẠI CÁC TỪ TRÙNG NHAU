@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#include<stdlib.h>
+
+int main(){
+	char c[105];
+	gets(c);
+	char a[20][50];
+	int dem=0; 
+	char *token=strtok(c," ");
+	while(token!=NULL){
+	    strcpy(a[dem],token);
+		dem++;
+		token=strtok(NULL," "); 
+	} 
+    for(int i=0;i<dem;i++){
+    	int ok=1;
+		for(int j=0;j<i;j++){
+			if(strcmp(a[i],a[j])==0){
+				ok =0;
+				break; 
+			} 
+		}
+		if(ok) printf("%s ",a[i]); 
+	} 
+} 
