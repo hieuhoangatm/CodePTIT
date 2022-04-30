@@ -1,0 +1,20 @@
+#include<stdio.h>
+int USCLNBSCNN(long long a,long long b){
+   if(a>0 && b>0){
+   long long bc=a*b; 
+   while(b!=0){
+       long long x=b;
+       b=a%b;
+       a=x;
+   }
+   printf("%lld\n", a);
+   printf("%lld", bc/a );
+   }
+}
+   
+int main(){
+   long long a,b;
+   scanf("%lld%lld", &a,&b);
+   USCLNBSCNN(a,b);
+   return 0;
+}
