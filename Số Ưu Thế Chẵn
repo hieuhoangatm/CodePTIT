@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+long long nhap(long long n){
+	long long sole=0,sochan=0;
+	long long m=n,k=n;
+	while(m>0 ){
+		long long i=m%10;
+		m/=10;
+		if(i%2==0) sochan++;
+	}
+	while(k>0){
+		long long j=k%10;
+		k/=10;
+		if(j%2==1) sole++;
+    }		
+	if(sochan>sole && n%2==0  ) 
+	    printf("YES\n");
+	else if(sochan<=sole || n%2==1)
+	    printf("NO\n");
+}
+
+int main(){
+	long long n,k;
+	scanf("%lld", &k);
+	while(k>0){
+		scanf("%lld", &n);
+	    nhap(n);
+	    k--;
+	}
+}
