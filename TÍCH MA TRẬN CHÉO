@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int nhap(int a[20][20],int n){
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			if(i>=j) 
+			a[i][j]=j+1; 
+			//a[0][0]==1; 
+		    else a[i][j]=0;
+	    }
+	}
+}
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	for(int i=1;i<=t;i++){
+		int n;
+		scanf("%d",&n);
+		int a[20][20];
+		nhap(a,n);
+		int b[20][20], c[20][20]; 
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				b[i][j] =a[j][i]; 
+			} 
+		}
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				c[i][j]=0; 
+				for(int x=0;x<n;x++){
+					c[i][j]+=a[i][x]*b[x][j]; 
+			   }
+		   }
+		}
+		printf("Test %d:\n",i); 
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				printf("%d ",c[i][j]); 
+			}
+			printf("\n");
+		}
+    }
+}
