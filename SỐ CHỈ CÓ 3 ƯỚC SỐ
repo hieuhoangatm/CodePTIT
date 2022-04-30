@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+
+int x[1000001];
+
+void kt(){
+	
+	for(int i=0;i<=1000000;i++){
+		x[i]=1;
+	}
+	x[0]=0,x[1]=0;
+	for( int i=2;i<=1000;i++){
+		if(x[i]){
+			for( int j=i*i;j<=1000000;j+=i){
+				x[j]=0;
+			}
+		}
+	}
+}
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	kt();
+	while(t--){
+		long long a,b;
+		scanf("%lld%lld",&a,&b);
+		int dem=0;
+		for(int i=sqrt(a);i<=sqrt(b);i++){
+			if(x[i] && 1ll*i*i>=a) dem++;
+		}
+		printf("%d\n",dem);
+	}
+}
