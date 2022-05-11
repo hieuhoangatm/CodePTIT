@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+
+int kt(char a[]){
+	if(a[11]> a[10] && a[10] >a[8] && a[8]>a[7] && a[7] >a[6]) return 1;
+	return 0;
+}
+
+int kt2(char a[]){
+	if(a[11]!=a[10]!=a[8]!=a[6]!=a[7]) return 0;
+	return 1;
+}
+
+int kt3(char a[]){
+	if((a[11] == a[10]) && (a[7]==a[6]) && (a[6]==a[8])) return 1;
+	return 0;
+}
+
+int kt4(char a[]){
+	if( (a[11]=='6' || a[11]=='8' ) && (a[10]== '6' || a[10]== '8' ) && (a[8]== '6' || a[8]== '8' ) && (a[7]== '6' || a[7]== '8' ) && (a[6]== '6' || a[6]== '8') ) return 1;
+	return 0;
+}
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	getchar();
+	while(t--){
+		char a[1000];
+		gets(a);
+		//digit(a);
+		if(kt(a) || kt2(a) || kt3(a) || kt4(a) ) printf("YES\n");
+		else printf("NO\n");
+	}
+}
+// Hoang Dinh Hieu
+
+
