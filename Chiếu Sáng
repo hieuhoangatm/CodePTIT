@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<stdbool.h>
+#include<string.h>
+
+int min(int a, int b){
+    return a<b ? a :b;
+}
+
+int max(int a,int b){
+    return a>b ? a:b;
+}
+
+int main(){
+    int n,k,m;
+    scanf("%d%d%d",&n,&m,&k);
+    int y=2*k+1;
+    bool a[1001];
+    memset(a,false,sizeof(a));
+    while(m--){
+        int t;
+        scanf("%d",&t);
+        for(int i=max(1,t-k); i<= min(n,t+k); i++){
+            a[i]=true;
+        }
+    }
+    int dem=0,den=0;
+    for(int i=1;i<=n;i++){
+        if(!a[i]){
+            dem++;
+        }
+        else{
+            if(dem>0){
+                den+= dem/y +((dem % y== 0) ?0 :1);
+                dem=0;
+            }
+        }
+    }
+    if(dem>0) den+= dem/y + ((dem % y== 0) ? 0 : 1);
+    printf("%d",den);
+
+}
