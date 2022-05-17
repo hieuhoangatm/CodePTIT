@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdbool.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+#define re(a) scanf("%d", &a)
+#define wr(a) printf("%d ", a)
+#define swap(a,b) {int _t=a; a=b;b=_t;}
+void noibot(int a[], int n)
+{
+	for(int i = 0; i < n; i ++)
+	{	
+		bool check = 0;
+		for(int j = 0; j < n - i - 1; j ++)
+			{
+				if(a[j] > a[j+1])
+				{
+					swap(a[j],a[j+1]);
+					check = 1;
+				} 
+			}
+		if(!check) break;
+		printf("Buoc %d: ", i+1);
+		for(int k = 0; k < n; k ++)
+		wr(a[k]);
+		puts("");
+	}
+}
+main()
+{
+	int n; re(n);
+	int a[n];
+	for(int i = 0; i < n; i ++)
+		re(a[i]);
+	noibot(a,n);
+}
