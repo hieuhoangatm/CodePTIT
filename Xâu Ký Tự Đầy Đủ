@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int kt(char c[]){
+	int kt[strlen(c)];
+	for(int i=0;i<strlen(c);i++){
+		kt[i]=1;
+		for(int j=0;j<i;j++){
+			if(c[i]>c[j] && kt[i] < kt[j]+1){
+				kt[i]=kt[j]+1;
+			}
+		}
+	}
+	int res=0;
+	for(int i=0;i<strlen(c);i++){
+		if(kt[i]>res){
+			res=kt[i];
+		}
+	}
+	return 26-res;
+}
+
+int main(){
+	char c[1000];
+	scanf("%s",c);
+	printf("%d",kt(c));
+}
