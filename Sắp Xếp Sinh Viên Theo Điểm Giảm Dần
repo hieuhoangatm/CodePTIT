@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+struct sv{
+	int id;
+	char ten[100];
+	float a,b,c;
+	char ngaysinh[20];
+}; 
+
+typedef struct sv sv;
+
+sv nhap(int ma){
+	sv x;
+	x.id=ma;
+	getchar();
+	gets(x.ten);
+	gets(x.ngaysinh);
+	scanf("%f%f%f",&x.a , &x.b,&x.c);
+	return x;
+}
+
+float tong(sv x){
+	return x.a+x.b+x.c;
+}
+
+void in(sv x){
+	printf("%d %s %s %.1f\n",x.id,x.ten, x.ngaysinh,tong(x));
+}
+
+void sx(sv a[],int n){
+	for(int i=0;i<n;i++){
+		int min=i;
+		for(int j=i+1;j<n;j++){
+			if(tong(a[j]) > tong(a[min])) min=j;
+		}
+		sv tmp=a[min];
+		a[min]=a[i];
+		a[i]=tmp;
+	}
+}
+
+int main(){
+	sv a[100];
+	int n=0;
+	int x;
+	scanf("%d",&x);
+	for(int i=0;i<x;i++){
+		a[n]=nhap(n+1);
+		n++;
+	}
+	sx(a,n);
+	for(int i=0;i<n;i++){
+		in(a[i]);
+	}
+	
+}
