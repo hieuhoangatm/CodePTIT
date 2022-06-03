@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<math.h>
+int b[1000+9]={0};
+int c[1009];
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		int n,m,i,j,k;
+		scanf("%d %d",&n,&m);
+		long long s=1,x;
+	   for(i=n;i<=m;i++){
+	   	    k=i;
+			for(j=2;j<=sqrt(k);j++){
+				int dem=0;
+				x=1;
+				if(k%j==0){
+				while(k%j==0){
+					x=x*j;
+					dem++;
+					k=k/j;
+				}
+				if(dem>b[j]){
+					b[j]=dem;
+					c[j]=x;
+				}
+			}
+		}
+			if(k>1 && b[k]==0){
+				b[k]++;
+				c[k]=k;
+			}
+		}
+		for(int i=2;i<=m;i++){
+			if(b[i]>0) s=s*c[i];
+		}
+		for(int i=2;i<=m;i++){
+			b[i]=0;
+			c[i]=0;
+		}
+		printf("%lld",s);
+		printf("\n");
+	}
+}
