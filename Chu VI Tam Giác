@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+float dd(float a, float b,float c, float d){
+	float x=(float)sqrt((a-b)*(a-b) + (c-d)*(c-d));
+	return x;
+}
+int main(){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		float xA,yA,xB,yB,xC,yC;
+		scanf("%f %f %f %f %f %f",&xA,&yA,&xB,&yB,&xC,&yC);
+		float a=dd(xA,xB,yA,yB);
+		float b=dd(xB,xC,yB,yC);
+		float c=dd(xC,xA,yC,yA);
+		float m=a+b+c;
+		 if((a + b <= c) || (a + c <= b) || (b + c <= a)) printf("INVALID\n");
+		else printf("%.3f\n",m);
+		
+	}
+}
