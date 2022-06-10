@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+#include<stdlib.h>
+
+struct mathang{
+	int id;
+	char ten[100];
+	char nhomhang[100];
+	float giaMua;
+	float giaBan;	 
+};
+
+typedef struct mathang mh;
+
+float loinhuan(mh x){
+	return x.giaBan-x.giaMua; 
+}
+
+void sx(mh a[],int n){
+	for(int i=0;i<n;i++){
+		int min=i;
+		for(int j=i+1;j<n;j++){
+			if(loinhuan(a[j]) > loinhuan(a[min])) min =j; 
+		}
+		mh tmp=a[min];
+		a[min]=a[i];
+		a[i]=tmp; 
+	}
+}
+
+main(){
+	int n;
+	scanf("%d",&n);
+	mh a[n];
+	for(int i=0;i<n;i++){
+		a[i].id=i+1;
+		getchar();
+		gets(a[i].ten);
+		gets(a[i].nhomhang);
+		scanf("%f%f",&a[i].giaMua,&a[i].giaBan); 
+	}
+	sx(a,n);
+	for(int i=0;i<n;i++){
+		printf("%d %s %s %.2f\n",a[i].id, a[i].ten, a[i].nhomhang, loinhuan(a[i])); 
+	} 
+} 
