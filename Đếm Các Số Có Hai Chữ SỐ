@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int cnt[1000]={0};
+ 
+main(){
+	char c[1000];
+	scanf("%s",c); 
+	int n=strlen(c);
+	int a[100];
+	int dem=0; 
+	if(n%2==0){
+		int x; 
+		for(int i=0;i<strlen(c);i+=2){
+			x=c[i]-'0';
+			x=x*10+(c[i+1]-'0');
+			a[dem]=x;
+			dem++;
+			x=0;
+		}
+	    for(int i=0;i<dem;i++) cnt[a[i]]++;
+	    for(int i=0;i<dem;i++){
+	    	if(cnt[a[i]] !=0){
+	    		printf("%d %d\n",a[i],cnt[a[i]]);
+				cnt[a[i]]++;
+			} 
+		}
+    }
+    if(n%2==1){
+		int x; 
+		for(int i=0;i<strlen(c)-1;i+=2){
+			x=(c[i]-'0');
+			x=x*10+(c[i+1]-'0');
+			a[dem]=x;
+			dem++;
+			x=0;
+		}
+	    for(int i=0;i<dem;i++) cnt[a[i]]++;
+	    for(int i=0;i<dem;i++){
+	    	if(cnt[a[i]] !=0){
+	    		printf("%d %d\n",a[i],cnt[a[i]]);
+				cnt[a[i]]++;
+			} 
+		}
+    }
+    
+} 
